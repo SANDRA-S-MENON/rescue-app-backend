@@ -1,7 +1,7 @@
-const express= require("express")
-const mongoose= require("mongoose")
-const bcrypt= require("bcrypt")
-const cors= require("cors")
+const Express= require("express")
+const Mongoose= require("mongoose")
+const Bcrypt= require("bcrypt")
+const Cors= require("cors")
 const jsonwebtoken= require("jsonwebtoken")
 
 
