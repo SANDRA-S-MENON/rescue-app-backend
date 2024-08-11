@@ -60,6 +60,27 @@ if (error) {
 
 
 
+app.post("/addData",(req,res)=>{
+    let input=req.body
+    let token=req.headers.token
+    jsonwebtoken.verify(token,"rescue-app",(error,decoded)=>{
+        if (decoded && decoded.email) {
+            let result=new dataModel(input)
+            result.save()
+            res.json({"status":"success"})
+        } else {
+            res.json({"status":"invalid authentication"})
+
+        }
+    })
+})
+
+
+
+
+
+
+
 
 app.listen(5050,()=>{
     console.log("server started")
